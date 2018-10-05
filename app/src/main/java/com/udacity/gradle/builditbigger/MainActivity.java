@@ -12,14 +12,11 @@ import android.widget.ProgressBar;
 
 public class MainActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -41,6 +38,4 @@ public class MainActivity extends AppCompatActivity {
         ProgressBar loading_indicator = findViewById(R.id.loading_indicator);
         new EndpointsAsyncTask().execute(new Pair<Context, ProgressBar>(this, loading_indicator));
     }
-
-
 }

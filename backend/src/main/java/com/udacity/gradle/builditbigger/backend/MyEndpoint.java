@@ -18,7 +18,6 @@ import javax.inject.Named;
         )
 )
 public class MyEndpoint {
-
     /** A simple endpoint method that takes a name and says Hi back */
     @ApiMethod(name = "getJoke")
     public MyResponse getJoke() {
@@ -27,5 +26,4 @@ public class MyEndpoint {
         myResponse.setJoke(jokesProvider.getAJoke());
         return myResponse;
     }
-
 }

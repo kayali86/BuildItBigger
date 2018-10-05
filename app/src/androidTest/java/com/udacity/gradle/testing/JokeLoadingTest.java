@@ -20,21 +20,18 @@ public class JokeLoadingTest {
     @Rule
     public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(MainActivity.class);
 
-
     @Test
-    public void testDoInBackground() {
+    public void jokesLoadingTest() {
 
-        EndpointsAsyncTask jokeAsyncTask = new EndpointsAsyncTask();
-        jokeAsyncTask.execute();
+        EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
+        endpointsAsyncTask.execute();
         try {
-            String result = jokeAsyncTask.get(30, SECONDS);
+            String result = endpointsAsyncTask.get(30, SECONDS);
             assertNotNull(result);
             assertTrue(result.length() > 0);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
-
 }
 

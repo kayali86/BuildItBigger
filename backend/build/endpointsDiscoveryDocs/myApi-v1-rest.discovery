@@ -85,11 +85,6 @@
  "schemas": {
   "MyResponse": {
    "id": "MyResponse",
-   "properties": {
-    "joke": {
-     "type": "string"
-    }
-   },
    "type": "object"
   }
  },
