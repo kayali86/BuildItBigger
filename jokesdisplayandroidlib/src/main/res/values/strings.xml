@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Jokes Display Android Library</string>
+    <string name="action_close">Close</string>
+</resources>
