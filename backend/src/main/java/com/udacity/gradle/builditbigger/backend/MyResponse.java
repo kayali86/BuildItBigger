@@ -6,6 +6,10 @@ package com.udacity.gradle.builditbigger.backend;
 class MyResponse {
     private String mJoke;
 
+    public String getJoke(){
+        return mJoke;
+    }
+
     void setJoke(String joke) {
         mJoke = joke;
     }

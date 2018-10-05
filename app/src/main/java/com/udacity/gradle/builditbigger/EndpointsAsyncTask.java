@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.util.Pair;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -60,11 +61,14 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, ProgressBar>, Vo
         if (loading_indicator != null) {
             loading_indicator.setVisibility(View.GONE);
         }
-        Intent jokeIntent = new Intent(context, JokeActivity.class);
-        JokesProvider jokesProvider = new JokesProvider();
-        jokeIntent.putExtra(JOKE_KEY, jokesProvider.getAJoke());
-        if (jokeIntent.resolveActivity(context.getPackageManager()) != null) {
-            context.startActivity(jokeIntent);
+        if (result != null){
+            Intent jokeIntent = new Intent(context, JokeActivity.class);
+            jokeIntent.putExtra(JOKE_KEY, result);
+            if (jokeIntent.resolveActivity(context.getPackageManager()) != null) {
+                context.startActivity(jokeIntent);
+            }
+        }else{
+            Log.e(EndpointsAsyncTask.class.getSimpleName(), "Result is null");
         }
     }
 }

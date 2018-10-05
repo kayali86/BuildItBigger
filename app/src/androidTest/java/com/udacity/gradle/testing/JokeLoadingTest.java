@@ -24,7 +24,6 @@ public class JokeLoadingTest {
     public void jokesLoadingTest() {
 
         EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
-        endpointsAsyncTask.execute();
         try {
             String result = endpointsAsyncTask.get(30, SECONDS);
             assertNotNull(result);
